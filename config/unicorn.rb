@@ -1,3 +1,7 @@
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "/path/to/app/current/Gemfile"
+end
+
 app_path = File.expand_path('../../../', __FILE__)
 
 worker_processes 1
@@ -17,10 +21,6 @@ GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
 check_client_connection false
 
 run_once = true
-
-before_exec do |server|
-  ENV["BUNDLE_GEMFILE"] = "/path/to/app/current/Gemfile"
-end
 
 before_fork do |server, worker|
   defined?(ActiveRecord::Base) &&
