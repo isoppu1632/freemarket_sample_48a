@@ -10,6 +10,9 @@
 
 server '54.95.149.4', user: 'ec2-user', roles: %w{app db web}
 
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "/path/to/app/current/Gemfile"
+end
 # role-based syntax
 # ==================
 
