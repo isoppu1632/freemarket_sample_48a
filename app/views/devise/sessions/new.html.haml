@@ -27,9 +27,8 @@
           %li
             = f.password_field :password, autocomplete: "current-password" ,placeholder: "パスワード"
           %li.sample
-            %input{type: "checkbox"} 私はロボットではありません
-            -# .reCAPTCHA
-            -#   = recaptcha_tags
+            .reCAPTCHA
+              = recaptcha_tags
           %li
             = f.button "ログイン",class: 'red_btn'
           %li
