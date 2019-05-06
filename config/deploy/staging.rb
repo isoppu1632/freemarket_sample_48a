@@ -1,7 +1,3 @@
-before_exec do |server|
-  ENV['BUNDLE_GEMFILE'] = @app_path + "/current/Gemfile"
-end
-
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
